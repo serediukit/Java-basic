@@ -13,7 +13,7 @@ public class CarsModel {
     public ArrayList<Car> getByBrand(ArrayList<Car> temp, String brand) {
         ArrayList<Car> lst = new ArrayList<>();
         for (int i = 0 ; i < temp.size(); i++) {
-            if(temp.get(i).getBrand() == brand) {
+            if(temp.get(i).getBrand().equalsIgnoreCase(brand)) {
                 lst.add(temp.get(i));
             }
         }
@@ -24,7 +24,7 @@ public class CarsModel {
         ArrayList<Car> lst = new ArrayList<>();
         Calendar cal = Calendar.getInstance();
         for (int i = 0 ; i < temp.size(); i++) {
-            if(temp.get(i).getModel() == model && temp.get(i).getYear() < cal.get(Calendar.YEAR) - year) {
+            if(temp.get(i).getModel().equalsIgnoreCase(model) && temp.get(i).getYear() < cal.get(Calendar.YEAR) - year) {
                 lst.add(temp.get(i));
             }
         }
