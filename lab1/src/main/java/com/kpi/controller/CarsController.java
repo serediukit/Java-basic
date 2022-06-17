@@ -7,7 +7,6 @@ import main.java.com.kpi.model.classes.Car;
 import main.java.com.kpi.model.utilities.RandInput;
 
 import java.util.ArrayList;
-//import java.util.Scanner;
 
 public class CarsController {
 
