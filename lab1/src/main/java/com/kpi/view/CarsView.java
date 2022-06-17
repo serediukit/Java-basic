@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class CarsView {
     public static final String INPUT_MESSAGE = "Choose option:\n" +
             "1. Cars by brand\n" +
-            "2. Cars by brand and used more than N years\n" +
+            "2. Cars by model and used more than N years\n" +
             "3. Cars by year and price higher than N\n" +
             "4. Exit\n" +
             "---------------------------------------------------\n";
