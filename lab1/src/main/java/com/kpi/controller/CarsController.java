@@ -24,7 +24,7 @@ public class CarsController {
         int choice = 0;
         ArrayList<Car> carList = new ArrayList<>();
         carList = RandInput.getInput();
-        view.printMessageln("Cars database");
+        view.printMessageln("\nCars database");
         view.printResult(carList);
 
         while(true) {
