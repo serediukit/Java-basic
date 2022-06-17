@@ -14,6 +14,10 @@ public class CarsView {
     public static final String INPUT_INT_DATA = "Enter an integer: ";
     public static final String WRONG_INPUT_DATA = "Wrong input!\nRepeat: ";
     public static final String INPUT_STRING_DATA = "Enter string: ";
+    public static final String HEADER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n" +
+            "|     ID     |      BRAND      |             MODEL              | YEAR |   COLOR    | REGNUMBER  |   PRICE    |\n" +
+            "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n";
+    public static final String FOOTER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n\n";
 
     public static void printMessage(String message) {
         System.out.print(message);
@@ -24,14 +28,11 @@ public class CarsView {
     }
 
     public static void printResult(ArrayList<Car> lst) {
-        System.out.print(
-                "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n" +
-                "|     ID     |      BRAND      |             MODEL              | YEAR |   COLOR    | REGNUMBER  |   PRICE    |\n" +
-                "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n");
+        System.out.print(HEADER_OUTPUT);
         for (int i = 0; i < lst.size(); i++) {
             System.out.println(lst.get(i).toString());
         }
-        System.out.println("+------------+-----------------+--------------------------------+------+------------+------------+------------+\n\n");
+        System.out.println(FOOTER_OUTPUT);
     }
 
 }
