@@ -15,15 +15,15 @@ public class CarsView {
     public static final String WRONG_INPUT_DATA = "Wrong input!\nRepeat: ";
     public static final String INPUT_STRING_DATA = "Enter string: ";
 
-    public void printMessage(String message) {
+    public static void printMessage(String message) {
         System.out.print(message);
     }
 
-    public void printMessageln(String message) {
+    public static void printMessageln(String message) {
         System.out.println(message);
     }
 
-    public void printResult(ArrayList<Car> lst) {
+    public static void printResult(ArrayList<Car> lst) {
         System.out.print(
                 "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n" +
                 "|     ID     |      BRAND      |             MODEL              | YEAR |   COLOR    | REGNUMBER  |   PRICE    |\n" +
