@@ -29,24 +29,26 @@ public class CarsController {
             view.printMessage(view.INPUT_MESSAGE);
             choice = input.inputValue(view);
             if(choice == 1) {
-                view.printMessage("BRAND");
+                view.printMessageln("BRAND");
                 String brand = input.inputString(view);
                 resultList = model.getByBrand(carList, brand);
                 view.printResult(resultList);
             } else if (choice == 2) {
-                view.printMessage("MODEL");
-                String model = input.inputString(view);
-                view.printMessage("YEARS");
+                view.printMessageln("MODEL");
+                String models = input.inputString(view);
+                view.printMessageln("YEARS");
                 int year = input.inputValue(view);
-                resultList = model.getByModelAndYears(carList, model, year);
+                resultList = model.getByModelAndYears(carList, models, year);
                 view.printResult(resultList);
             } else if (choice == 3) {
-                view.printMessage("YEAR");
+                view.printMessageln("YEAR");
                 int year = input.inputValue(view);
-                view.printMessage("PRICE");
+                view.printMessageln("PRICE");
                 int price = input.inputValue(view);
                 resultList = model.getByYearAndPrice(carList, year, price);
                 view.printResult(resultList);
+            } else if (choice == 4) {
+                System.exit(0);
             } else {
                 view.printMessage("There is no command for this number");
             }

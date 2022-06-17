@@ -9,6 +9,7 @@ public class CarsView {
             "1. Cars by brand\n" +
             "2. Cars by brand and used more than N years\n" +
             "3. Cars by year and price higher than N\n" +
+            "4. Exit\n" +
             "---------------------------------------------------\n";
     public static final String INPUT_INT_DATA = "Enter an integer: ";
     public static final String WRONG_INPUT_DATA = "Wrong input!\nRepeat: ";
@@ -18,8 +19,8 @@ public class CarsView {
         System.out.print(message);
     }
 
-    public void printMessageAndResult(String message, int value) {
-        System.out.print(message + value);
+    public void printMessageln(String message) {
+        System.out.println(message);
     }
 
     public void printResult(ArrayList<Car> lst) {
