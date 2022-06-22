@@ -4,13 +4,13 @@ package main.java.com.kpi.view;
 import java.util.Scanner;
 
 public class CarsInput {
-    private CarsView view;
+    private static CarsView view;
 
     public CarsInput(CarsView view) {
         this.view = view;
     }
 
-    public static int inputValue(CarsView view) {
+    public static int inputValue() {
         Scanner sc = new Scanner(System.in);
         view.printMessage(view.INPUT_INT_DATA);
         while(!sc.hasNextInt()) {
@@ -20,7 +20,7 @@ public class CarsInput {
         return sc.nextInt();
     }
 
-    public static String inputString(CarsView view) {
+    public static String inputString() {
         Scanner sc = new Scanner(System.in);
         view.printMessage(view.INPUT_STRING_DATA);
         while(!sc.hasNextLine()) {

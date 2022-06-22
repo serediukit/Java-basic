@@ -1,6 +1,7 @@
 package main.java.com.kpi.controller;
 
 import main.java.com.kpi.model.CarsModel;
+import main.java.com.kpi.model.utilities.Validator;
 import main.java.com.kpi.view.CarsView;
 import main.java.com.kpi.view.CarsInput;
 import main.java.com.kpi.model.classes.Car;
@@ -21,38 +22,39 @@ public class CarsController {
     }
 
     public void run() {
-        int choice = 0;
+        int choice;
         model.setCars(RandInput.getInput());
         view.printMessageln("\nCars database");
         view.printResult(model.getCars());
 
         while(true) {
-            ArrayList<Car> resultList = new ArrayList<>();
+            ArrayList<Car> resultList;
 
             view.printMessage(view.INPUT_MESSAGE);
-            choice = input.inputValue(view);
+            choice = input.inputValue();
+            Validator.checkNum(choice, 1, 4);
 
             if(choice == 1) {
                 view.printMessageln("BRAND");
-                String brand = input.inputString(view);
+                String brand = input.inputString();
 
                 resultList = model.getByBrand(brand);
                 view.printResult(resultList);
             } else if (choice == 2) {
                 view.printMessageln("MODEL");
-                String models = input.inputString(view);
+                String models = input.inputString();
 
                 view.printMessageln("YEARS");
-                int year = input.inputValue(view);
+                int year = input.inputValue();
 
                 resultList = model.getByModelAndYears(models, year);
                 view.printResult(resultList);
             } else if (choice == 3) {
                 view.printMessageln("YEAR");
-                int year = input.inputValue(view);
+                int year = input.inputValue();
 
                 view.printMessageln("PRICE");
-                int price = input.inputValue(view);
+                int price = input.inputValue();
 
                 resultList = model.getByYearAndPrice(year, price);
                 view.printResult(resultList);

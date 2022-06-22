@@ -29,8 +29,8 @@ public class CarsView {
 
     public static void printResult(ArrayList<Car> lst) {
         System.out.print(HEADER_OUTPUT);
-        for (int i = 0; i < lst.size(); i++) {
-            System.out.println(lst.get(i).toString());
+        for (Car car : lst) {
+            System.out.println(car);
         }
         System.out.println(FOOTER_OUTPUT);
     }
