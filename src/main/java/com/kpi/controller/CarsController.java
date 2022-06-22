@@ -22,10 +22,9 @@ public class CarsController {
 
     public void run() {
         int choice = 0;
-        ArrayList<Car> carList = new ArrayList<>();
-        carList = RandInput.getInput();
+        model.setCars(RandInput.getInput());
         view.printMessageln("\nCars database");
-        view.printResult(carList);
+        view.printResult(model.getCars());
 
         while(true) {
             ArrayList<Car> resultList = new ArrayList<>();
@@ -37,7 +36,7 @@ public class CarsController {
                 view.printMessageln("BRAND");
                 String brand = input.inputString(view);
 
-                resultList = model.getByBrand(carList, brand);
+                resultList = model.getByBrand(brand);
                 view.printResult(resultList);
             } else if (choice == 2) {
                 view.printMessageln("MODEL");
@@ -46,7 +45,7 @@ public class CarsController {
                 view.printMessageln("YEARS");
                 int year = input.inputValue(view);
 
-                resultList = model.getByModelAndYears(carList, models, year);
+                resultList = model.getByModelAndYears(models, year);
                 view.printResult(resultList);
             } else if (choice == 3) {
                 view.printMessageln("YEAR");
@@ -55,7 +54,7 @@ public class CarsController {
                 view.printMessageln("PRICE");
                 int price = input.inputValue(view);
 
-                resultList = model.getByYearAndPrice(carList, year, price);
+                resultList = model.getByYearAndPrice(year, price);
                 view.printResult(resultList);
             } else if (choice == 4) {
                 System.exit(0);
