@@ -42,6 +42,7 @@ public class CarsController {
 
                     resultList = model.getByBrand(brand);
                     view.printResult(resultList);
+
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
                     String models = input.inputString();
@@ -53,6 +54,7 @@ public class CarsController {
 
                     resultList = model.getByModelAndYears(models, year);
                     view.printResult(resultList);
+
                 } else if (choice == 3) {
                     view.printMessageln("YEAR");
                     int year = input.inputValue();
@@ -64,6 +66,7 @@ public class CarsController {
 
                     resultList = model.getByYearAndPrice(year, price);
                     view.printResult(resultList);
+                    
                 } else {
                     System.exit(0);
                 }
