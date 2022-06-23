@@ -35,6 +35,7 @@ public class FileLoader {
             logger.error("Data can't be deserialized.");
             System.exit(0);
         }
+        logger.info("File \"" + fileName + "\" was successfully loaded");
 
         return lst;
     }
@@ -54,5 +55,6 @@ public class FileLoader {
             logger.error("Data can't be saved.");
             e.printStackTrace();
         }
+        logger.info("File \"" + fileName + "\" was successfully saved");
     }
 }
