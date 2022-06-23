@@ -1,4 +1,4 @@
-package main.java.com.kpi.view;
+package com.kpi.view;
 
 
 import java.util.Scanner;

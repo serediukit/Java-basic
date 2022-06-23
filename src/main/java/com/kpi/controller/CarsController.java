@@ -1,12 +1,14 @@
-package main.java.com.kpi.controller;
+package com.kpi.controller;
 
-import main.java.com.kpi.model.CarsModel;
-import main.java.com.kpi.model.utilities.FileLoader;
-import main.java.com.kpi.model.utilities.Validator;
-import main.java.com.kpi.view.CarsView;
-import main.java.com.kpi.view.CarsInput;
-import main.java.com.kpi.model.classes.Car;
+import com.kpi.model.CarsModel;
+import com.kpi.model.utilities.FileLoader;
+import com.kpi.model.utilities.Validator;
+import com.kpi.view.CarsView;
+import com.kpi.view.CarsInput;
+import com.kpi.model.classes.Car;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
@@ -15,11 +17,13 @@ public class CarsController {
     private final CarsModel model;
     private final CarsView view;
     private final CarsInput input;
+    private static final Logger logger = LogManager.getLogger(CarsController.class);
 
     public CarsController() {
         this.model = new CarsModel();
         this.view = new CarsView();
         this.input = new CarsInput(view);
+        logger.info("The program has been started.");
     }
 
     public void run() {
@@ -32,11 +36,13 @@ public class CarsController {
             model.setCars(FileLoader.load(fileName));
         } catch (Exception e) {
             view.printMessageln(e.getMessage());
+            logger.error(e.getMessage(), e);
             System.exit(0);
         }
 
         if(model.getCars().isEmpty()) {
             view.printMessageln("\nDatabase is empty\nCLosing the program...");
+            logger.info("Database is empty. Closing the program.");
             System.exit(0);
         }
 
@@ -89,10 +95,12 @@ public class CarsController {
                     FileLoader.save(endFileName, model.getCars());
 
                     view.printMessageln(view.EXIT_PROGRAM);
+                    logger.info("The program has been closed");
                     System.exit(0);
 
                 } else {
                     view.printMessageln(view.EXIT_PROGRAM);
+                    logger.info("The program has been closed");
                     System.exit(0);
 
                 }
@@ -106,6 +114,7 @@ public class CarsController {
 
             } catch (Exception e) {
                 view.printMessageln(e.getMessage());
+                logger.error(e.getMessage(), e);
             }
         }
     }

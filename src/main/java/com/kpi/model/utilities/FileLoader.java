@@ -1,13 +1,17 @@
-package main.java.com.kpi.model.utilities;
+package com.kpi.model.utilities;
 
-import main.java.com.kpi.model.classes.Car;
-import main.java.com.kpi.view.CarsView;
+import com.kpi.model.classes.Car;
+import com.kpi.view.CarsView;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.io.*;
 
 public class FileLoader {
     private static final String FILE_PATH = "src/main/java/res/";
+    private static final Logger logger = LogManager.getLogger(FileLoader.class);
 
     public FileLoader() {
 
@@ -22,11 +26,13 @@ public class FileLoader {
             fistream.close();
         } catch (IOException e) {
             CarsView.printMessageln(e.getMessage());
-            CarsView.printMessageln("CLosing the program...");
+            CarsView.printMessageln("Closing the program...");
+            logger.error("File can't to be read.");
             System.exit(0);
         } catch (ClassNotFoundException e) {
             CarsView.printMessageln(e.getMessage());
             CarsView.printMessageln("CLosing the program...");
+            logger.error("Data can't be deserialized.");
             System.exit(0);
         }
 
@@ -45,6 +51,7 @@ public class FileLoader {
             System.out.println(CarsView.SAVE_FILE + fileName);
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
+            logger.error("Data can't be saved.");
             e.printStackTrace();
         }
     }

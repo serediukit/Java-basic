@@ -1,7 +1,6 @@
-package main.java.com.kpi.model;
+package com.kpi.model;
 
-import main.java.com.kpi.model.classes.Car;
-import main.java.com.kpi.view.CarsView;
+import com.kpi.model.classes.Car;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;

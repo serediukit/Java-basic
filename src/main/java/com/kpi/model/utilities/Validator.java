@@ -1,8 +1,8 @@
-package main.java.com.kpi.model.utilities;
+package com.kpi.model.utilities;
 
-import main.java.com.kpi.model.exceptions.FileNameException;
-import main.java.com.kpi.model.exceptions.NumberInputException;
-import main.java.com.kpi.model.exceptions.StringInputException;
+import com.kpi.model.exceptions.FileNameException;
+import com.kpi.model.exceptions.NumberInputException;
+import com.kpi.model.exceptions.StringInputException;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
