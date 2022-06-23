@@ -2,7 +2,6 @@ package main.java.com.kpi.model.utilities;
 
 import main.java.com.kpi.model.classes.Car;
 import main.java.com.kpi.view.CarsView;
-import main.java.com.kpi.model.exceptions.FileLoadException;
 
 import java.util.ArrayList;
 import java.io.*;
@@ -14,31 +13,39 @@ public class FileLoader {
 
     }
 
-    public static ArrayList<Car> load(String filename) {
+    public static ArrayList<Car> load(String fileName) {
         ArrayList<Car> lst = new ArrayList<>();
 
         try {
-            ObjectInputStream fistream = new ObjectInputStream(new FileInputStream(FILE_PATH + filename));
+            ObjectInputStream fistream = new ObjectInputStream(new FileInputStream(FILE_PATH + fileName));
             lst = (ArrayList<Car>) fistream.readObject();
+            fistream.close();
         } catch (IOException e) {
             CarsView.printMessageln(e.getMessage());
+            CarsView.printMessageln("CLosing the program...");
+            System.exit(0);
         } catch (ClassNotFoundException e) {
             CarsView.printMessageln(e.getMessage());
+            CarsView.printMessageln("CLosing the program...");
+            System.exit(0);
         }
 
         return lst;
     }
 
-    public static void save(String filename, String info1, String info2, String base) {
-        try (FileWriter fostream = new FileWriter(filename)) {
-            fostream.write(info1 + "\n");
-            fostream.write(info2 + "\n\n");
-            fostream.write(base);
-            fostream.flush();
-            CarsView.printMessageln(CarsView.SAVE_FILE);
-            CarsView.printMessageln("File location: " + FILE_PATH + filename);
+    public static void save(String fileName, ArrayList<Car> lst) {
+        try {
+            FileOutputStream fos = new FileOutputStream(FILE_PATH + fileName);
+            ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(fos));
+
+            oos.writeObject(lst);
+            oos.close();
+            fos.close();
+
+            System.out.println(CarsView.SAVE_FILE + fileName);
         } catch (IOException e) {
-            CarsView.printMessageln(e.getMessage());
+            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

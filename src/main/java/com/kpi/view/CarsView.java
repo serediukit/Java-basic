@@ -5,11 +5,12 @@ import main.java.com.kpi.model.classes.Car;
 import java.util.ArrayList;
 
 public class CarsView {
-    public static final String INPUT_MESSAGE = "Choose option:\n" +
+    public static final String INPUT_MESSAGE = "\n\nChoose option:\n" +
             "1. Cars by brand\n" +
             "2. Cars by model and used more than N years\n" +
             "3. Cars by year and price higher than N\n" +
-            "4. Exit\n" +
+            "4. Save database to the file\n" +
+            "5. Exit\n" +
             "---------------------------------------------------\n";
     public static final String INPUT_INT_DATA = "Enter an integer: ";
     public static final String WRONG_INPUT_DATA = "Wrong input!\nRepeat: ";
@@ -17,9 +18,10 @@ public class CarsView {
     public static final String HEADER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n" +
             "|     ID     |      BRAND      |             MODEL              | YEAR |   COLOR    | REGNUMBER  |   PRICE    |\n" +
             "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n";
-    public static final String FOOTER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n\n";
+    public static final String FOOTER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n";
     public static final String INPUT_FILE_NAME = "Enter file name: ";
-    public static final String SAVE_FILE = "Data was successfully saved.";
+    public static final String SAVE_FILE = "Data was successfully saved into ";
+
 
     public static void printMessage(String message) {
         System.out.print(message);

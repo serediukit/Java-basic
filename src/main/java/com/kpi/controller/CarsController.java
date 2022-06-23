@@ -7,6 +7,7 @@ import main.java.com.kpi.view.CarsView;
 import main.java.com.kpi.view.CarsInput;
 import main.java.com.kpi.model.classes.Car;
 
+
 import java.util.ArrayList;
 
 public class CarsController {
@@ -23,9 +24,16 @@ public class CarsController {
 
     public void run() {
         int choice;
+        int savedFiles = 0;
 
-        String filename = input.inputString(view.INPUT_FILE_NAME);
-        model.setCars(FileLoader.load(filename));
+        try {
+            String fileName = input.inputString(view.INPUT_FILE_NAME);
+            Validator.checkFileName(fileName);
+            model.setCars(FileLoader.load(fileName));
+        } catch (Exception e) {
+            view.printMessageln(e.getMessage());
+            System.exit(0);
+        }
 
         if(model.getCars().isEmpty()) {
             view.printMessageln("\nDatabase is empty\nCLosing the program...");
@@ -37,11 +45,11 @@ public class CarsController {
 
         while(true) {
             try {
-                ArrayList<Car> resultList;
+                ArrayList<Car> resultList = new ArrayList<>();
 
                 view.printMessage(view.INPUT_MESSAGE);
                 choice = input.inputValue();
-                Validator.checkNum(choice, 1, 4);
+                Validator.checkNum(choice, 1, 5);
 
                 if(choice == 1) {
                     view.printMessageln("BRAND");
@@ -50,7 +58,6 @@ public class CarsController {
 
                     resultList = model.getByBrand(brand);
                     view.printResult(resultList);
-                    FileLoader.save("brand.txt", "BRAND: " + brand, "", model.generateInfo(resultList));
 
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
@@ -63,7 +70,6 @@ public class CarsController {
 
                     resultList = model.getByModelAndYears(models, year);
                     view.printResult(resultList);
-                    FileLoader.save("model_year.txt", "MODEL: " + models, "YEAR: " + year, model.generateInfo(resultList));
 
                 } else if (choice == 3) {
                     view.printMessageln("YEAR");
@@ -76,11 +82,20 @@ public class CarsController {
 
                     resultList = model.getByYearAndPrice(year, price);
                     view.printResult(resultList);
-                    FileLoader.save("year_price.txt", "YEAR: " + year, "PRICE: " + price, model.generateInfo(resultList));
+
+                } else if (choice == 4) {
 
                 } else {
                     System.exit(0);
                 }
+
+                String choiceYN = input.inputString("Save the result? y/n:");
+                Validator.checkYN(choiceYN);
+                if(choiceYN.equals("y")) {
+                    savedFiles++;
+                    FileLoader.save("result" + savedFiles + ".ser", resultList);
+                }
+
             } catch (Exception e) {
                 view.printMessageln(e.getMessage());
             }

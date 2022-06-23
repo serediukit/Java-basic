@@ -40,16 +40,4 @@ public class CarsModel {
                 .filter(cars -> cars.getYear() == year && cars.getPrice() > price)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
-
-    public String generateInfo(ArrayList<Car> lst) {
-        String str = new String();
-        str += CarsView.HEADER_OUTPUT;
-        for(Car car : lst) {
-            str += car.toString();
-            str += "\n";
-        }
-        str += CarsView.FOOTER_OUTPUT;
-
-        return str;
-    }
 }

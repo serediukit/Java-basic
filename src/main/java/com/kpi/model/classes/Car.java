@@ -1,6 +1,8 @@
 package main.java.com.kpi.model.classes;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
     private String id;
     private String brand;
     private String model;
