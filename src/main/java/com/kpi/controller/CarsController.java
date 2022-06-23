@@ -27,6 +27,11 @@ public class CarsController {
         String filename = input.inputString(view.INPUT_FILE_NAME);
         model.setCars(FileLoader.load(filename));
 
+        if(model.getCars().isEmpty()) {
+            view.printMessageln("\nDatabase is empty\nCLosing the program...");
+            System.exit(0);
+        }
+
         view.printMessageln("\nCars database");
         view.printResult(model.getCars());
 
@@ -45,7 +50,7 @@ public class CarsController {
 
                     resultList = model.getByBrand(brand);
                     view.printResult(resultList);
-                    FileLoader.save("brand.txt", model.generateInfo(resultList));
+                    FileLoader.save("brand.txt", "BRAND: " + brand, "", model.generateInfo(resultList));
 
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
@@ -58,7 +63,7 @@ public class CarsController {
 
                     resultList = model.getByModelAndYears(models, year);
                     view.printResult(resultList);
-                    FileLoader.save("model_year.txt", model.generateInfo(resultList));
+                    FileLoader.save("model_year.txt", "MODEL: " + models, "YEAR: " + year, model.generateInfo(resultList));
 
                 } else if (choice == 3) {
                     view.printMessageln("YEAR");
@@ -71,7 +76,7 @@ public class CarsController {
 
                     resultList = model.getByYearAndPrice(year, price);
                     view.printResult(resultList);
-                    FileLoader.save("year_price.txt", model.generateInfo(resultList));
+                    FileLoader.save("year_price.txt", "YEAR: " + year, "PRICE: " + price, model.generateInfo(resultList));
 
                 } else {
                     System.exit(0);

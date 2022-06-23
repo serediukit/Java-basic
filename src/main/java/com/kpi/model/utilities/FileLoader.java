@@ -29,9 +29,11 @@ public class FileLoader {
         return lst;
     }
 
-    public static void save(String filename, String info) {
+    public static void save(String filename, String info1, String info2, String base) {
         try (FileWriter fostream = new FileWriter(filename)) {
-            fostream.write(info);
+            fostream.write(info1 + "\n");
+            fostream.write(info2 + "\n\n");
+            fostream.write(base);
             fostream.flush();
             CarsView.printMessageln(CarsView.SAVE_FILE);
             CarsView.printMessageln("File location: " + FILE_PATH + filename);
