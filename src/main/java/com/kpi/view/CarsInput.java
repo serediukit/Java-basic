@@ -20,9 +20,9 @@ public class CarsInput {
         return sc.nextInt();
     }
 
-    public static String inputString() {
+    public static String inputString(String message) {
         Scanner sc = new Scanner(System.in);
-        view.printMessage(view.INPUT_STRING_DATA);
+        view.printMessage(message);
         while(!sc.hasNextLine()) {
             view.printMessage(view.WRONG_INPUT_DATA + view.INPUT_INT_DATA);
             sc.next();

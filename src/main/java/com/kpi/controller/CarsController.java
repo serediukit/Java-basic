@@ -24,8 +24,7 @@ public class CarsController {
     public void run() {
         int choice;
 
-        view.printMessageln(view.INPUT_FILE_NAME);
-        String filename = input.inputString();
+        String filename = input.inputString(view.INPUT_FILE_NAME);
         model.setCars(FileLoader.load(filename));
 
         view.printMessageln("\nCars database");
@@ -41,7 +40,7 @@ public class CarsController {
 
                 if(choice == 1) {
                     view.printMessageln("BRAND");
-                    String brand = input.inputString();
+                    String brand = input.inputString(view.INPUT_STRING_DATA);
                     Validator.checkString(brand);
 
                     resultList = model.getByBrand(brand);
@@ -50,7 +49,7 @@ public class CarsController {
 
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
-                    String models = input.inputString();
+                    String models = input.inputString(view.INPUT_STRING_DATA);
                     Validator.checkString(models);
 
                     view.printMessageln("YEARS");

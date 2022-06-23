@@ -2,6 +2,7 @@ package main.java.com.kpi.model.utilities;
 
 import main.java.com.kpi.model.classes.Car;
 import main.java.com.kpi.view.CarsView;
+import main.java.com.kpi.model.exceptions.FileLoadException;
 
 import java.util.ArrayList;
 import java.io.*;
