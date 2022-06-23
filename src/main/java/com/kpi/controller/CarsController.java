@@ -84,9 +84,17 @@ public class CarsController {
                     view.printResult(resultList);
 
                 } else if (choice == 4) {
+                    String endFileName = input.inputString(view.INPUT_FILE_NAME);
+                    Validator.checkFileName(endFileName);
+                    FileLoader.save(endFileName, model.getCars());
+
+                    view.printMessageln(view.EXIT_PROGRAM);
+                    System.exit(0);
 
                 } else {
+                    view.printMessageln(view.EXIT_PROGRAM);
                     System.exit(0);
+
                 }
 
                 String choiceYN = input.inputString("Save the result? y/n:");
