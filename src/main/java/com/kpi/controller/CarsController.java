@@ -1,11 +1,12 @@
 package main.java.com.kpi.controller;
 
 import main.java.com.kpi.model.CarsModel;
+import main.java.com.kpi.model.utilities.FileLoader;
 import main.java.com.kpi.model.utilities.Validator;
 import main.java.com.kpi.view.CarsView;
 import main.java.com.kpi.view.CarsInput;
 import main.java.com.kpi.model.classes.Car;
-import main.java.com.kpi.model.utilities.RandInput;
+
 
 import java.util.ArrayList;
 
@@ -23,21 +24,36 @@ public class CarsController {
 
     public void run() {
         int choice;
-        model.setCars(RandInput.getInput());
+        int savedFiles = 0;
+
+        try {
+            String fileName = input.inputString(view.INPUT_FILE_NAME);
+            Validator.checkFileName(fileName);
+            model.setCars(FileLoader.load(fileName));
+        } catch (Exception e) {
+            view.printMessageln(e.getMessage());
+            System.exit(0);
+        }
+
+        if(model.getCars().isEmpty()) {
+            view.printMessageln("\nDatabase is empty\nCLosing the program...");
+            System.exit(0);
+        }
+
         view.printMessageln("\nCars database");
         view.printResult(model.getCars());
 
         while(true) {
             try {
-                ArrayList<Car> resultList;
+                ArrayList<Car> resultList = new ArrayList<>();
 
                 view.printMessage(view.INPUT_MESSAGE);
                 choice = input.inputValue();
-                Validator.checkNum(choice, 1, 4);
+                Validator.checkNum(choice, 1, 5);
 
                 if(choice == 1) {
                     view.printMessageln("BRAND");
-                    String brand = input.inputString();
+                    String brand = input.inputString(view.INPUT_STRING_DATA);
                     Validator.checkString(brand);
 
                     resultList = model.getByBrand(brand);
@@ -45,7 +61,7 @@ public class CarsController {
 
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
-                    String models = input.inputString();
+                    String models = input.inputString(view.INPUT_STRING_DATA);
                     Validator.checkString(models);
 
                     view.printMessageln("YEARS");
@@ -66,10 +82,28 @@ public class CarsController {
 
                     resultList = model.getByYearAndPrice(year, price);
                     view.printResult(resultList);
-                    
-                } else {
+
+                } else if (choice == 4) {
+                    String endFileName = input.inputString(view.INPUT_FILE_NAME);
+                    Validator.checkFileName(endFileName);
+                    FileLoader.save(endFileName, model.getCars());
+
+                    view.printMessageln(view.EXIT_PROGRAM);
                     System.exit(0);
+
+                } else {
+                    view.printMessageln(view.EXIT_PROGRAM);
+                    System.exit(0);
+
                 }
+
+                String choiceYN = input.inputString("Save the result? y/n:");
+                Validator.checkYN(choiceYN);
+                if(choiceYN.equals("y")) {
+                    savedFiles++;
+                    FileLoader.save("result" + savedFiles + ".ser", resultList);
+                }
+
             } catch (Exception e) {
                 view.printMessageln(e.getMessage());
             }

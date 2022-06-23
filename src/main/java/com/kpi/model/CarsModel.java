@@ -1,6 +1,7 @@
 package main.java.com.kpi.model;
 
 import main.java.com.kpi.model.classes.Car;
+import main.java.com.kpi.view.CarsView;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -14,7 +15,7 @@ public class CarsModel {
     }
 
     public void setCars(ArrayList<Car> temp) {
-        cars = temp ;
+        cars = temp;
     }
 
     public ArrayList<Car> getCars() {
