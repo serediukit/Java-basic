@@ -8,19 +8,18 @@ import java.util.regex.Matcher;
 
 public class Validator {
     private static Pattern stringPattern;
-    private static Matcher stringMatcher;
 
     public Validator() {
-        stringPattern = Pattern.compile("^[a-zA-z]+$");
+        stringPattern = Pattern.compile("^[a-zA-Z0-9+.-]+$");
     }
 
-    public static void checkNum(float a, float left, float right) throws NumberInputException {
+    public static void checkNum(int a, int left, int right) throws NumberInputException {
         if(a < left || a > right)
             throw new NumberInputException();
     }
 
     public static void checkString(String str) throws StringInputException {
-        stringMatcher = stringPattern.matcher(str);
+        Matcher stringMatcher = stringPattern.matcher(str);
         if (!stringMatcher.matches())
             throw new StringInputException();
     }

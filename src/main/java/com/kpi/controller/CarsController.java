@@ -28,40 +28,47 @@ public class CarsController {
         view.printResult(model.getCars());
 
         while(true) {
-            ArrayList<Car> resultList;
+            try {
+                ArrayList<Car> resultList;
 
-            view.printMessage(view.INPUT_MESSAGE);
-            choice = input.inputValue();
-            Validator.checkNum(choice, 1, 4);
+                view.printMessage(view.INPUT_MESSAGE);
+                choice = input.inputValue();
+                Validator.checkNum(choice, 1, 4);
 
-            if(choice == 1) {
-                view.printMessageln("BRAND");
-                String brand = input.inputString();
+                if(choice == 1) {
+                    view.printMessageln("BRAND");
+                    String brand = input.inputString();
+                    Validator.checkString(brand);
 
-                resultList = model.getByBrand(brand);
-                view.printResult(resultList);
-            } else if (choice == 2) {
-                view.printMessageln("MODEL");
-                String models = input.inputString();
+                    resultList = model.getByBrand(brand);
+                    view.printResult(resultList);
+                } else if (choice == 2) {
+                    view.printMessageln("MODEL");
+                    String models = input.inputString();
+                    Validator.checkString(models);
 
-                view.printMessageln("YEARS");
-                int year = input.inputValue();
+                    view.printMessageln("YEARS");
+                    int year = input.inputValue();
+                    Validator.checkNum(year, 0, 121);
 
-                resultList = model.getByModelAndYears(models, year);
-                view.printResult(resultList);
-            } else if (choice == 3) {
-                view.printMessageln("YEAR");
-                int year = input.inputValue();
+                    resultList = model.getByModelAndYears(models, year);
+                    view.printResult(resultList);
+                } else if (choice == 3) {
+                    view.printMessageln("YEAR");
+                    int year = input.inputValue();
+                    Validator.checkNum(year, 1900, 2022);
 
-                view.printMessageln("PRICE");
-                int price = input.inputValue();
+                    view.printMessageln("PRICE");
+                    int price = input.inputValue();
+                    Validator.checkNum(price, 1, 1000000000);
 
-                resultList = model.getByYearAndPrice(year, price);
-                view.printResult(resultList);
-            } else if (choice == 4) {
-                System.exit(0);
-            } else {
-                view.printMessage("There is no command for this number");
+                    resultList = model.getByYearAndPrice(year, price);
+                    view.printResult(resultList);
+                } else {
+                    System.exit(0);
+                }
+            } catch (Exception e) {
+                view.printMessageln(e.getMessage());
             }
         }
     }

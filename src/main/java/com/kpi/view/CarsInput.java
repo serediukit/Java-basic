@@ -27,6 +27,6 @@ public class CarsInput {
             view.printMessage(view.WRONG_INPUT_DATA + view.INPUT_INT_DATA);
             sc.next();
         }
-        return sc.nextLine();
+        return sc.nextLine().trim();
     }
 }
