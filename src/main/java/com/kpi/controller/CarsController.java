@@ -1,11 +1,11 @@
 package main.java.com.kpi.controller;
 
 import main.java.com.kpi.model.CarsModel;
+import main.java.com.kpi.model.utilities.FileLoader;
 import main.java.com.kpi.model.utilities.Validator;
 import main.java.com.kpi.view.CarsView;
 import main.java.com.kpi.view.CarsInput;
 import main.java.com.kpi.model.classes.Car;
-import main.java.com.kpi.model.utilities.RandInput;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,11 @@ public class CarsController {
 
     public void run() {
         int choice;
-        model.setCars(RandInput.getInput());
+
+        view.printMessageln(view.INPUT_FILE_NAME);
+        String filename = input.inputString();
+        model.setCars(FileLoader.load(filename));
+
         view.printMessageln("\nCars database");
         view.printResult(model.getCars());
 
@@ -42,6 +46,7 @@ public class CarsController {
 
                     resultList = model.getByBrand(brand);
                     view.printResult(resultList);
+                    FileLoader.save("brand.txt", model.generateInfo(resultList));
 
                 } else if (choice == 2) {
                     view.printMessageln("MODEL");
@@ -54,6 +59,7 @@ public class CarsController {
 
                     resultList = model.getByModelAndYears(models, year);
                     view.printResult(resultList);
+                    FileLoader.save("model_year.txt", model.generateInfo(resultList));
 
                 } else if (choice == 3) {
                     view.printMessageln("YEAR");
@@ -66,7 +72,8 @@ public class CarsController {
 
                     resultList = model.getByYearAndPrice(year, price);
                     view.printResult(resultList);
-                    
+                    FileLoader.save("year_price.txt", model.generateInfo(resultList));
+
                 } else {
                     System.exit(0);
                 }

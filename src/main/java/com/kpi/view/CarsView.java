@@ -18,6 +18,8 @@ public class CarsView {
             "|     ID     |      BRAND      |             MODEL              | YEAR |   COLOR    | REGNUMBER  |   PRICE    |\n" +
             "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n";
     public static final String FOOTER_OUTPUT = "+------------+-----------------+--------------------------------+------+------------+------------+------------+\n\n";
+    public static final String INPUT_FILE_NAME = "Enter file name: ";
+    public static final String SAVE_FILE = "Data was successfully saved.";
 
     public static void printMessage(String message) {
         System.out.print(message);
