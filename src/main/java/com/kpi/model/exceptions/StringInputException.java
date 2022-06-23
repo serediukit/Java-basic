@@ -1,4 +1,4 @@
-package main.java.com.kpi.model.exceptions;
+package com.kpi.model.exceptions;
 
 public class StringInputException extends Exception {
 

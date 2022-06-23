@@ -1,4 +1,4 @@
-package main.java.com.kpi.model.classes;
+package com.kpi.model.classes;
 
 import java.io.Serializable;
 

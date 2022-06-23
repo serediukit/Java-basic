@@ -1,0 +1,95 @@
+2022-06-24 00:36:25 INFO  CarsController:28 - The program has been started.
+2022-06-24 00:36:40 INFO  CarsController:105 - The program has been closed
+2022-06-24 00:37:21 INFO  CarsController:28 - The program has been started.
+2022-06-24 00:37:46 INFO  CarsController:100 - The program has been closed
+2022-06-24 00:37:59 INFO  CarsController:28 - The program has been started.
+2022-06-24 00:38:02 ERROR CarsController:41 - Filename is incorrect. Closing the program...
+com.kpi.model.exceptions.FileNameException: Filename is incorrect. Closing the program...
+	at com.kpi.model.utilities.Validator.checkFileName(Validator.java:27)
+	at com.kpi.controller.CarsController.run(CarsController.java:37)
+	at com.kpi.MVCMain.main(MVCMain.java:9)
+2022-06-24 00:42:48 INFO  CarsController:28 - The program has been started.
+2022-06-24 00:42:56 INFO  CarsController:69 - Query 1 was successfully completed
+2022-06-24 00:42:57 INFO  CarsController:121 - Data was successfully saved into -> result1.ser
+2022-06-24 00:43:05 INFO  CarsController:95 - Query 3 was successfully completed
+2022-06-24 00:43:13 INFO  CarsController:101 - Query 4 was successfully completed
+2022-06-24 00:43:13 INFO  CarsController:104 - The program has been closed
+2022-06-24 00:45:21 INFO  CarsController:28 - The program has been started.
+2022-06-24 00:45:25 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 00:45:32 INFO  CarsController:69 - Query 1 was successfully completed
+2022-06-24 00:45:34 INFO  FileLoader:58 - File "result1.ser" was successfully saved
+2022-06-24 00:45:34 INFO  CarsController:121 - Data was successfully saved into -> result1.ser
+2022-06-24 00:45:41 INFO  CarsController:82 - Query 2 was successfully completed
+2022-06-24 00:45:43 INFO  FileLoader:58 - File "result2.ser" was successfully saved
+2022-06-24 00:45:43 INFO  CarsController:121 - Data was successfully saved into -> result2.ser
+2022-06-24 00:45:47 INFO  CarsController:69 - Query 1 was successfully completed
+2022-06-24 00:45:52 INFO  CarsController:69 - Query 1 was successfully completed
+2022-06-24 00:45:54 INFO  FileLoader:58 - File "result3.ser" was successfully saved
+2022-06-24 00:45:54 INFO  CarsController:121 - Data was successfully saved into -> result3.ser
+2022-06-24 00:45:58 INFO  CarsController:108 - Query 5 was successfully completed
+2022-06-24 00:45:58 INFO  CarsController:111 - The program has been closed
+2022-06-24 00:47:05 INFO  CarsController:28 - -----------------------------
+2022-06-24 00:47:05 INFO  CarsController:29 - The program has been started.
+2022-06-24 00:47:42 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 00:47:47 INFO  CarsController:70 - Query 1 was successfully completed
+2022-06-24 00:47:51 INFO  CarsController:109 - Query 5 was successfully completed
+2022-06-24 00:47:51 INFO  CarsController:112 - The program has been closed
+2022-06-24 00:56:34 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 00:56:34 INFO  CarsController:32 - The program has been started.
+2022-06-24 00:56:39 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 00:56:41 INFO  CarsController:112 - Query 5 was successfully completed
+2022-06-24 00:56:41 INFO  CarsController:115 - The program has been closed
+2022-06-24 00:57:43 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 00:57:43 INFO  CarsController:32 - The program has been started.
+2022-06-24 00:57:48 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 00:57:54 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 00:57:55 ERROR FileLoader:55 - Data can't be saved.
+2022-06-24 00:57:55 INFO  FileLoader:58 - File "result521-10:12:13.ser" was successfully saved
+2022-06-24 00:57:55 INFO  CarsController:127 - Data was successfully saved into -> result521-10:12:13.ser
+2022-06-24 00:59:36 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 00:59:36 INFO  CarsController:32 - The program has been started.
+2022-06-24 00:59:44 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 00:59:49 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:00:26 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:00:26 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:00:30 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:00:37 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:01:56 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:01:56 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:02:00 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:02:02 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:02:07 INFO  CarsController:112 - Query 5 was successfully completed
+2022-06-24 01:02:07 INFO  CarsController:115 - The program has been closed
+2022-06-24 01:02:43 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:02:43 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:02:46 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:02:48 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:04:31 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:04:31 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:04:35 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:04:38 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:05:13 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:05:13 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:05:17 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:05:19 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:05:29 INFO  CarsController:112 - Query 5 was successfully completed
+2022-06-24 01:05:29 INFO  CarsController:115 - The program has been closed
+2022-06-24 01:05:48 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:05:48 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:06:10 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:06:10 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:06:25 INFO  CarsController:31 - -----------------------------------------------------------------
+2022-06-24 01:06:25 INFO  CarsController:32 - The program has been started.
+2022-06-24 01:06:28 INFO  FileLoader:38 - File "database.ser" was successfully loaded
+2022-06-24 01:06:34 INFO  CarsController:73 - Query 1 was successfully completed
+2022-06-24 01:06:36 INFO  FileLoader:58 - File "result_Fri_Jun_24_010636_GMT0200_2022" was successfully saved
+2022-06-24 01:06:36 INFO  CarsController:129 - Data was successfully saved into -> result_Fri_Jun_24_010636_GMT0200_2022
+2022-06-24 01:06:45 INFO  CarsController:86 - Query 2 was successfully completed
+2022-06-24 01:06:46 INFO  FileLoader:58 - File "result_Fri_Jun_24_010646_GMT0200_2022" was successfully saved
+2022-06-24 01:06:46 INFO  CarsController:129 - Data was successfully saved into -> result_Fri_Jun_24_010646_GMT0200_2022
+2022-06-24 01:06:59 INFO  CarsController:99 - Query 3 was successfully completed
+2022-06-24 01:07:00 INFO  FileLoader:58 - File "result_Fri_Jun_24_010700_GMT0200_2022" was successfully saved
+2022-06-24 01:07:00 INFO  CarsController:129 - Data was successfully saved into -> result_Fri_Jun_24_010700_GMT0200_2022
+2022-06-24 01:07:08 INFO  FileLoader:58 - File "dataset.ser" was successfully saved
+2022-06-24 01:07:08 INFO  CarsController:105 - Query 4 was successfully completed
+2022-06-24 01:07:08 INFO  CarsController:108 - The program has been closed

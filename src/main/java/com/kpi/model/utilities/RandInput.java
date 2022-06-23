@@ -1,6 +1,6 @@
-package main.java.com.kpi.model.utilities;
+package com.kpi.model.utilities;
 
-import main.java.com.kpi.model.classes.Car;
+import com.kpi.model.classes.Car;
 
 import java.util.ArrayList;
 
