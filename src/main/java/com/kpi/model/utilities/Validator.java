@@ -7,11 +7,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Validator {
-    private static Pattern stringPattern;
-
-    public Validator() {
-        stringPattern = Pattern.compile("^[a-zA-Z0-9+.-]+$");
-    }
+    private static Pattern stringPattern = Pattern.compile("^[a-zA-Z0-9 -]+$");
 
     public static void checkNum(int a, int left, int right) throws NumberInputException {
         if(a < left || a > right)
